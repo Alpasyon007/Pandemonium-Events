@@ -12,16 +12,16 @@ namespace Pandemonium {
 		inline unsigned int GetWidth() const { return m_Width; }
 		inline unsigned int GetHeight() const { return m_Height; }
 
-		std::string ToString() const override {
+		std::string			ToString() const override {
 			std::stringstream ss;
 			ss << "WindowResizeEvent: " << m_Width << ", " << m_Height;
 			return ss.str();
 		}
 
-		static EventType GetStaticType() { return EventType::WindowResize; }
-		virtual EventType GetEventType() const override { return GetStaticType(); }
+		static EventType	GetStaticType() { return EventType::WindowResize; }
+		virtual EventType	GetEventType() const override { return GetStaticType(); }
 		virtual const char* GetName() const override { return "WindowResize"; }
-		virtual int GetCategoryFlags() const override { return EventCategoryApplication; }
+		virtual int			GetCategoryFlags() const override { return EventCategoryApplication; }
 	private:
 		unsigned int m_Width, m_Height;
 	};
@@ -30,41 +30,41 @@ namespace Pandemonium {
 	public:
 		WindowCloseEvent() {}
 
-		static EventType GetStaticType() { return EventType::WindowClose; }
-		virtual EventType GetEventType() const override { return GetStaticType(); }
-		virtual const char* GetName() const override { return "AppTick"; }
-		virtual int GetCategoryFlags() const override { return EventCategoryApplication; }
+		static EventType	GetStaticType() { return EventType::WindowClose; }
+		virtual EventType	GetEventType() const override { return GetStaticType(); }
+		virtual const char* GetName() const override { return "WindowClose"; }
+		virtual int			GetCategoryFlags() const override { return EventCategoryApplication; }
 	};
 
 	class PANDEMONIUM_API AppTickEvent : public Event {
 	public:
 		AppTickEvent() {}
 
-		static EventType GetStaticType() { return EventType::AppTick; }
-		virtual EventType GetEventType() const override { return GetStaticType(); }
+		static EventType	GetStaticType() { return EventType::AppTick; }
+		virtual EventType	GetEventType() const override { return GetStaticType(); }
 		virtual const char* GetName() const override { return "AppTick"; }
-		virtual int GetCategoryFlags() const override { return EventCategoryApplication; }
+		virtual int			GetCategoryFlags() const override { return EventCategoryApplication; }
 	};
 
 	class PANDEMONIUM_API AppUpdateEvent : public Event {
 	public:
 		AppUpdateEvent() {}
 
-		static EventType GetStaticType() { return EventType::AppUpdate; }
-		virtual EventType GetEventType() const override { return GetStaticType(); }
+		static EventType	GetStaticType() { return EventType::AppUpdate; }
+		virtual EventType	GetEventType() const override { return GetStaticType(); }
 		virtual const char* GetName() const override { return "AppUpdate"; }
-		virtual int GetCategoryFlags() const override { return EventCategoryApplication; }
+		virtual int			GetCategoryFlags() const override { return EventCategoryApplication; }
 	};
 
 	class PANDEMONIUM_API AppRenderEvent : public Event {
 	public:
 		AppRenderEvent() {}
 
-		static EventType GetStaticType() { return EventType::AppRender; }
-		virtual EventType GetEventType() const override { return GetStaticType(); }
+		static EventType	GetStaticType() { return EventType::AppRender; }
+		virtual EventType	GetEventType() const override { return GetStaticType(); }
 		virtual const char* GetName() const override { return "AppRender"; }
-		virtual int GetCategoryFlags() const override { return EventCategoryApplication; }
+		virtual int			GetCategoryFlags() const override { return EventCategoryApplication; }
 	};
-}
+} // namespace Pandemonium
 
 #endif /* APPLICATION_EVENT_H */
