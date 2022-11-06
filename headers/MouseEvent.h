@@ -5,9 +5,9 @@
 #include "Event.h"
 
 namespace Pandemonium {
-	class PANDEMONIUM_API MouseMoveEvent : public Event {
+	class PANDEMONIUM_API MouseMovedEvent : public Event {
 	public:
-		MouseMoveEvent(float x, float y) : m_MouseX(x), m_MouseY(y) {}
+		MouseMovedEvent(float x, float y) : m_MouseX(x), m_MouseY(y) {}
 
 		inline float GetX() const { return m_MouseX; }
 		inline float GetY() const { return m_MouseY; }
