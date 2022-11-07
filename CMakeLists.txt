@@ -13,5 +13,5 @@ target_include_directories(
 	PandemoniumEvents
 	PUBLIC
 	${CMAKE_CURRENT_SOURCE_DIR}/headers
-	"../Pandemonium-Core/headers"
+	${CMAKE_CURRENT_SOURCE_DIR}/../Pandemonium-Core/headers
 )
