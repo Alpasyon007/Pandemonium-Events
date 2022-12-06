@@ -1,7 +1,8 @@
 #ifndef APPLICATION_EVENT_H
 #define APPLICATION_EVENT_H
 
-#include "ppch.h"
+#include <sstream>
+
 #include "Event.h"
 
 namespace Pandemonium {
@@ -10,6 +11,7 @@ namespace Pandemonium {
 		WindowResizeEvent(unsigned int width, unsigned int height) : m_Width(width), m_Height(height) {}
 
 		inline unsigned int GetWidth() const { return m_Width; }
+
 		inline unsigned int GetHeight() const { return m_Height; }
 
 		std::string			ToString() const override {
@@ -19,8 +21,11 @@ namespace Pandemonium {
 		}
 
 		static EventType	GetStaticType() { return EventType::WindowResize; }
+
 		virtual EventType	GetEventType() const override { return GetStaticType(); }
+
 		virtual const char* GetName() const override { return "WindowResize"; }
+
 		virtual int			GetCategoryFlags() const override { return EventCategoryApplication; }
 	private:
 		unsigned int m_Width, m_Height;
@@ -31,8 +36,11 @@ namespace Pandemonium {
 		WindowCloseEvent() {}
 
 		static EventType	GetStaticType() { return EventType::WindowClose; }
+
 		virtual EventType	GetEventType() const override { return GetStaticType(); }
+
 		virtual const char* GetName() const override { return "WindowClose"; }
+
 		virtual int			GetCategoryFlags() const override { return EventCategoryApplication; }
 	};
 
@@ -41,8 +49,11 @@ namespace Pandemonium {
 		AppTickEvent() {}
 
 		static EventType	GetStaticType() { return EventType::AppTick; }
+
 		virtual EventType	GetEventType() const override { return GetStaticType(); }
+
 		virtual const char* GetName() const override { return "AppTick"; }
+
 		virtual int			GetCategoryFlags() const override { return EventCategoryApplication; }
 	};
 
@@ -51,8 +62,11 @@ namespace Pandemonium {
 		AppUpdateEvent() {}
 
 		static EventType	GetStaticType() { return EventType::AppUpdate; }
+
 		virtual EventType	GetEventType() const override { return GetStaticType(); }
+
 		virtual const char* GetName() const override { return "AppUpdate"; }
+
 		virtual int			GetCategoryFlags() const override { return EventCategoryApplication; }
 	};
 
@@ -61,8 +75,11 @@ namespace Pandemonium {
 		AppRenderEvent() {}
 
 		static EventType	GetStaticType() { return EventType::AppRender; }
+
 		virtual EventType	GetEventType() const override { return GetStaticType(); }
+
 		virtual const char* GetName() const override { return "AppRender"; }
+
 		virtual int			GetCategoryFlags() const override { return EventCategoryApplication; }
 	};
 } // namespace Pandemonium

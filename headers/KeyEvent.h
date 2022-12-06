@@ -1,7 +1,6 @@
 #ifndef KEY_EVENT_H
 #define KEY_EVENT_H
 
-#include "ppch.h"
 #include "Event.h"
 
 namespace Pandemonium {
@@ -12,6 +11,7 @@ namespace Pandemonium {
 		virtual int GetCategoryFlags() const override { return EventCategoryKeyboard | EventCategoryInput; }
 	protected:
 		KeyEvent(int keycode) : m_KeyCode(keycode) {}
+
 		int m_KeyCode;
 	};
 
@@ -28,7 +28,9 @@ namespace Pandemonium {
 		}
 
 		static EventType	GetStaticType() { return EventType::KeyPressed; }
+
 		virtual EventType	GetEventType() const override { return GetStaticType(); }
+
 		virtual const char* GetName() const override { return "KeyPressed"; }
 	private:
 		int m_RepeatCount;
@@ -45,7 +47,9 @@ namespace Pandemonium {
 		}
 
 		static EventType	GetStaticType() { return EventType::KeyReleased; }
+
 		virtual EventType	GetEventType() const override { return GetStaticType(); }
+
 		virtual const char* GetName() const override { return "KeyReleased"; }
 	};
 
@@ -60,7 +64,9 @@ namespace Pandemonium {
 		}
 
 		static EventType	GetStaticType() { return EventType::KeyTyped; }
+
 		virtual EventType	GetEventType() const override { return GetStaticType(); }
+
 		virtual const char* GetName() const override { return "KeyTyped"; }
 	};
 } // namespace Pandemonium

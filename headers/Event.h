@@ -1,7 +1,8 @@
 #ifndef EVENT_H
 #define EVENT_H
 
-#include "ppch.h"
+#include <string>
+
 #include "Core.h"
 
 namespace Pandemonium {
@@ -40,6 +41,7 @@ namespace Pandemonium {
 		virtual EventType	GetEventType() const	 = 0;
 		virtual const char* GetName() const			 = 0;
 		virtual int			GetCategoryFlags() const = 0;
+
 		virtual std::string ToString() const { return GetName(); }
 
 		inline bool			IsInCategory(EventCategory category) { return GetCategoryFlags() & category; }

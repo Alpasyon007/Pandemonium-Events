@@ -1,7 +1,6 @@
 #ifndef MOUSE_EVENT_H
 #define MOUSE_EVENT_H
 
-#include "ppch.h"
 #include "Event.h"
 
 namespace Pandemonium {
@@ -10,6 +9,7 @@ namespace Pandemonium {
 		MouseMovedEvent(float x, float y) : m_MouseX(x), m_MouseY(y) {}
 
 		inline float GetX() const { return m_MouseX; }
+
 		inline float GetY() const { return m_MouseY; }
 
 		std::string	 ToString() const override {
@@ -19,8 +19,11 @@ namespace Pandemonium {
 		}
 
 		static EventType	GetStaticType() { return EventType::MouseMoved; }
+
 		virtual EventType	GetEventType() const override { return GetStaticType(); }
+
 		virtual const char* GetName() const override { return "MouseMoved"; }
+
 		virtual int			GetCategoryFlags() const override { return EventCategoryMouse | EventCategoryInput; }
 	private:
 		float m_MouseX, m_MouseY;
@@ -31,6 +34,7 @@ namespace Pandemonium {
 		MouseScrolledEvent(float xOffset, float yOffset) : m_XOffset(xOffset), m_YOffset(yOffset) {}
 
 		inline float GetXOffset() const { return m_XOffset; }
+
 		inline float GetYOffset() const { return m_YOffset; }
 
 		std::string	 ToString() const override {
@@ -40,8 +44,11 @@ namespace Pandemonium {
 		}
 
 		static EventType	GetStaticType() { return EventType::MouseScrolled; }
+
 		virtual EventType	GetEventType() const override { return GetStaticType(); }
+
 		virtual const char* GetName() const override { return "MouseScrolled"; }
+
 		virtual int			GetCategoryFlags() const override { return EventCategoryMouse | EventCategoryInput; }
 	private:
 		float m_XOffset, m_YOffset;
@@ -69,7 +76,9 @@ namespace Pandemonium {
 		}
 
 		static EventType	GetStaticType() { return EventType::MouseButtonPressed; }
+
 		virtual EventType	GetEventType() const override { return GetStaticType(); }
+
 		virtual const char* GetName() const override { return "MouseButtonPressed"; }
 	};
 
@@ -84,7 +93,9 @@ namespace Pandemonium {
 		}
 
 		static EventType	GetStaticType() { return EventType::MouseButtonReleased; }
+
 		virtual EventType	GetEventType() const override { return GetStaticType(); }
+
 		virtual const char* GetName() const override { return "MouseButtonReleased"; }
 	};
 } // namespace Pandemonium
